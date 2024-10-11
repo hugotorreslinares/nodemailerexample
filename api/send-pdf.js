@@ -1,3 +1,6 @@
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000;
 const nodemailer = require('nodemailer');
 const path = require('path');
 
@@ -57,4 +60,12 @@ module.exports = async (req, res) => {
     console.error('Error sending email:', error);
     res.status(500).send('Error sending email');
   }
+
 };
+
+app.listen(port,'0.0.0.0',() => {
+  console.log(`Server running on port ${port}`);
+});
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
