@@ -1,0 +1,16 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "api/send-pdf.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/send-pdf",
+        "methods": ["POST", "OPTIONS"],
+        "dest": "/api/send-pdf.js"
+      }
+    ]
+  }
